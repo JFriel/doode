@@ -2,8 +2,6 @@ import math
 
 def waveMaths(eqArray1, eqArray2, speed):
 	# Takes in array defining the line equations and speed, returns array with wavelength, speed, frequency, period
-	
-
 	timesY1 = eqArray1[0]
 	timesX1 = eqArray1[1]
 	constant1 = eqArray1[2]
@@ -30,12 +28,18 @@ def waveMaths(eqArray1, eqArray2, speed):
 	# taking distance between wave points when x = 100
 	hundredDist = math.sqrt((yHundred1 - yHundred2)**2)
 
-	# taking average distance between the two lines between x=0 and x = 100
-
+	# taking average distance between the two lines between x =0 and x = 10
 	avgDist = ((hundredDist + zeroDist)/2)
 
-	return avgDist
+	# Finds period and frequency of waves and returns them along with speed
 
-# Test line with lines 3y = 4x + 7 and 5y = 3x + 6
+	frequency = speed/avgDist
+	period = 1/frequency
+
+	return "period: " + str(period) + ", frequency: " + str(frequency) + ", speed: " + str(speed)
+
+
+
+# Test line with lines 3y = 4x + 7 and 5y = 3x + 6, should return 0.543.., freq 1.84, speed 69
 print waveMaths([3,4,7], [5,3,6], 69)
 
