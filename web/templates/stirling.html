@@ -1,1 +1,45 @@
-OFWGKTA
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Doode</title>
+
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="static/animate.css">
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="static/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="top">
+                <h1 id="title" class="hidden"><span id="logo">Stirling<span></span></span></h1>
+                <center><font color="white"><h3>Coldingham Beach & East Sands</h3></font></center>
+            </div>
+            <div class="login-box animated fadeInUp">
+                <div class="box-header">
+                    <h2>Add Your # For Updates</h2>
+                </div>
+                     <form onSubmit="return checkAnswer();">
+                        <input id="answer" name="answer" type="text" maxlength="55" class="box" autofocus />
+                        <input type="submit" class="submit" value="SUBMIT" />
+                    </form>
+                    <script>
+                    function checkAnswer(){
+                    var response = document.getElementById('answer').value;
+                    location = 'http://127.0.0.1:5000/handle';
+                    return false;
+                    }
+                    </script>
+
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -24,11 +24,19 @@
             <div class="login-box animated fadeInUp">
                 <div class="box-header">
                     <h2>Add Your # For Updates</h2>
-                    <form method="post" action="handle">
+                </div>
+                     <form onSubmit="return checkAnswer();">
                         <input id="answer" name="answer" type="text" maxlength="55" class="box" autofocus />
                         <input type="submit" class="submit" value="SUBMIT" />
                     </form>
-                </div>
+                    <script>
+                    function checkAnswer(){
+                    var response = document.getElementById('answer').value;
+                    location = 'http://127.0.0.1:5000/handle';
+                    return false;
+                    }
+                    </script>
+
             </div>
         </div>
     </body>

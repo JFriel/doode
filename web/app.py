@@ -19,10 +19,8 @@ def striling(name=None):
 def woops(name=None):
     return render_template("woops.html",name=name);
 
-@app.route('/handle', methods=['POST'])
-def handle_data():
-    print("I got It")
-    projectpath = request.form.projectFilePath
+@app.route('/handle')
+def handle(name=None):
     return render_template("handle.html",name=name)
 
 if __name__ == "__main__":
