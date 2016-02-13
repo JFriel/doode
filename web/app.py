@@ -12,7 +12,7 @@ def edinburgh(name=None):
     return render_template("edinburgh.html",name=name);
 
 @app.route("/stirling")
-def striling(name=None):
+def stirling(name=None):
     return render_template("stirling.html",name=name);
 
 @app.route("/woops")

@@ -33,10 +33,10 @@
                 <script>
                     function checkAnswer(){
                     var response = document.getElementById('answer').value;
-                    if (response.toLowerCase() == "edinburgh")
-                        location = 'http://127.0.0.1:5000/edinburgh';
-                    else if(responce.toLowerCase() == "stirling")
+                    if (response.toLowerCase() == "stirling")
                         location = 'http://127.0.0.1:5000/stirling';
+                    else if(response.toLowerCase() == "edinburgh")
+                        location = 'http://127.0.0.1:5000/edinburgh';
                     else
                         location = 'http://127.0.0.1:5000/woops';
                     return false;
