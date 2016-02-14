@@ -1,9 +1,15 @@
 from image import *
+import time
+from scrape_eastsands import *
+from scrape_coldingham import *
 
-image = image(4)
+while (True):
 
+	#scrape_eastsands()
+	print "scraped eastsands"
+	#scrape_coldingham()
+	print "scraped coldingham"
+	check_file()
+	print "data collected for coldingham"
 
-
-print image.water_line_reference
-print image.break_length
-print image.wave_length
+	time.sleep(2400)
