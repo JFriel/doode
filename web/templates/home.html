@@ -34,11 +34,11 @@
                     function checkAnswer(){
                     var response = document.getElementById('answer').value;
                     if (response.toLowerCase() == "stirling")
-                        location = 'http://127.0.0.1:5000/stirling';
+                        location = 'stirling';
                     else if(response.toLowerCase() == "edinburgh")
-                        location = 'http://127.0.0.1:5000/edinburgh';
+                        location = '/edinburgh';
                     else
-                        location = 'http://127.0.0.1:5000/woops';
+                        location = '/woops';
                     return false;
                     }
                 </script>
