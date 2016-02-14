@@ -9,11 +9,13 @@ from scipy.spatial.distance import pdist
 
 class image():
 
-	def __init__(self, name, cam_height, cam_distance):
+	def __init__(self, name):
 		
-		self.cam_height
-		self.cam_distance
 		self.look_image(name)
+
+	def paralax_correction(self, measured_interval, cam_height, cam_distance):
+		distance_to_measurement = math.sqrt(cam_height*cam_height+cam_distance*cam_distance)
+		return measured_interval * distance_to_measurement * distance_to_measurement / (distance_to_measurement*cam_height - cam_distance*measured_interval)	
 
 	def look_image(self, name):
 		img_original = cv2.imread('test_waves/'+str(name)+'.jpg')
@@ -72,22 +74,22 @@ class image():
 
 		largest = heapq.nlargest(3,centroid)
 
-		metre_per_pixel = 0.4
+		metre_per_pixel = 0.2
 
-		self.water_line_paralax = largest[0]*metre_per_pixel
-		self.break_length_paralax = (largest[0] - largest[1])*metre_per_pixel
-		self.wave_length_paralax = (largest[1] - largest[2])*metre_per_pixel
+		water_line_reference = largest[0]
+		break_length_paralax = (largest[0] - largest[1])*metre_per_pixel
+		wave_length_paralax = (largest[1] - largest[2])*metre_per_pixel
 
-		cam_height = 26
-		cam_distance = 220
-
-		self.break_length = self.paralax_correction(self.break_length_paralax, cam_height, cam_distance)
-        #self.wave_length = self.paralax_correction(self.wave_length_paralax, cam_height, cam_distance + self.break_length)
-
-        cv2.imshow("frame1",img)
+		cv2.imshow("frame1",img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-	def paralax_correction(self, measured_interval, cam_height, cam_distance):
-		distance_to_measurement = math.sqrt(cam_height*cam_height+cam_distance*cam_distance)
-		return measured_interval * distance_to_measurement * distance_to_measurement / (distance_to_measurement*cam_height - cam_distance*measured_interval)
+        cam_height = 26
+        cam_distance = 220
+
+        self.break_length = self.paralax_correction(self.break_length_paralax, cam_height, cam_distance)
+        self.wave_length = self.paralax_correction(self.wave_length_paralax, cam_height, cam_distance + self.break_length)
+
+		
+
+	
