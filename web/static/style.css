@@ -66,6 +66,76 @@ p.small {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
+
+.about-box {
+	background-color: white;
+	max-width: 1020px;
+	margin: 0 auto;
+	position: relative;
+	top: 80px;
+	padding-bottom: 30px;
+	border-radius: 5px;
+	box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+	text-align: center;
+}
+
+.about-box .box-header {
+	background-color: #fdb736;
+	margin-top: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.about-box label {
+	font-weight: 700;
+	font-size: .8em;
+	color: #888;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	line-height: 2em;
+}
+
+.about-box input {
+	margin-bottom: 20px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	font-size: .9em;
+	color: #888;
+}
+
+.about-box input:focus {
+	outline: none;
+	border-color: #665851;
+	transition: 0.5s;
+	color: #665851;
+}
+
+.about-box button {
+	margin-top: 0px;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.7em;
+	letter-spacing: 1px;
+	background-color: #fdb736;
+	cursor:pointer;
+	outline: none;
+}
+
+.about-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.about-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+
 .login-box {
 	background-color: white;
 	max-width: 340px;
