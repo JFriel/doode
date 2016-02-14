@@ -35,10 +35,13 @@ def waveMaths(eqArray1, eqArray2, speed):
 
 	frequency = speed/avgDist
 	period = 1/frequency
+        gnarly = gnarometer(wavelength,period,frequency)
+
 
 	return "period: " + str(period) + ", frequency: " + str(frequency) + ", speed: " + str(speed)
 
-
+def gnarometer(wavelength,period,frequency):
+    return wavelength * (period*2) + (frequency*1.5)
 
 # Test line with lines 3y = 4x + 7 and 5y = 3x + 6, should return 0.543.., freq 1.84, speed 69
 print waveMaths([3,4,7], [5,3,6], 69)
