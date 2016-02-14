@@ -23,5 +23,13 @@ def woops(name=None):
 def handle(name=None):
     return render_template("handle.html",name=name)
 
+@app.route('/about')
+def about(name=None):
+    return render_template("about.html",name=name)
+
+#@app.route('/coldingham')
+#def coldingham(name=None):
+#    return render_template("coldingham.html",name=name)
+
 if __name__ == "__main__":
     app.run()
